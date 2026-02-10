@@ -22,7 +22,7 @@ exploitableFunctions = {
         "innerText",
     ],
     "php": [
-        "`",
+        # "`",
         "system(",
         "exec(",
         "popen(",
