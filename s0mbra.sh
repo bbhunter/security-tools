@@ -217,10 +217,10 @@ enum() {
     DOMAIN=$1
     echo -e "$BLUE[s0mbra] Let's see what have we got here...$CLR\n"
 
-    # amass passive enum
-    # echo -e "\n$GREEN--> amass (takes some time, so sit tight, Choom...)$CLR\n"
-    # amass enum -passive -d $DOMAIN -o "$TMPDIR/amass.tmp"
-    # cut -d' ' -f 1 "$TMPDIR/amass.tmp" | grep -e '[a-z]' | sort -u | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" | grep $DOMAIN > "$TMPDIR/enum_amass.log"
+    amass passive enum
+    echo -e "\n$GREEN--> amass (takes some time, so sit tight, Choom...)$CLR\n"
+    amass enum -passive -d $DOMAIN -o "$TMPDIR/amass.tmp"
+    cut -d' ' -f 1 "$TMPDIR/amass.tmp" | grep -e '[a-z]' | sort -u | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" | grep $DOMAIN > "$TMPDIR/enum_amass.log"
 
     # subfinder
     echo -e "\n$GREEN--> subfinder$CLR\n"
